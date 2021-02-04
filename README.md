@@ -1,2 +1,2 @@
-# Seismicrisk
-QGIS plugin to evaluate thre ssismic risk in built environment
+# Seismic risk
+QGIS plugin to evaluate thr ssismic risk in built environment
