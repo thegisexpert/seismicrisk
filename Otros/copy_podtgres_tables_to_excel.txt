@@ -1,0 +1,3 @@
+COPY (SELECT * FROM tbl) TO '/home/user/Desktop/result_sql.csv' WITH CSV HEADER;
+
+COPY (SELECT * FROM fragility_curves) TO 'D:/Data/Fragility curves/fragilities_from_qgis.csv' WITH CSV HEADER;

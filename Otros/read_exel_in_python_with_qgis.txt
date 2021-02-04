@@ -1,0 +1,42 @@
+#https://gis.stackexchange.com/questions/222353/reading-excel-data-using-pyqgis
+
+
+def valores(uri, index):
+
+    #uri = 'D:/Data/Fragility curves/FragilityCurves.xlsx'
+    layer = QgsVectorLayer(uri, 'test', 'ogr')
+
+    column = ""
+    for feat in layer.getFeatures():
+        attrs = feat.attributes()
+        column = column + ";"+ attrs[1]
+        print attrs[1]
+
+    column = ""
+    for feat in layer.getFeatures():
+        attrs = feat.attributes()
+        column = column + ";"+ attrs[index]
+        #print attrs[1]
+
+
+    #print " column 1 " + column
+
+    columns = column.split(";")
+
+    print " limit state "
+
+
+    print " median " + columns[2]
+
+    print " st " + columns[3]
+
+uri = 'D:/Data/Fragility curves/FragilityCurves.xlsx'
+
+valores(uri, 2)
+valores(uri, 3)
+#'C:/Users/AG/.qgis2/python/plugins/PruebaAutoFields/Otros/read_exel_in_python_with_qgis.txt'
+
+strin = "C:/Users/AG/.qgis2/python/plugins/PruebaAutoFields/Otros/read_exel_in_python_with_qgis.txt"
+#strin = string.replace("/", "\")
+print strin
+

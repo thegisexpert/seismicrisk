@@ -1,0 +1,21 @@
+from Connection import Connection
+
+print "ok "
+
+con = Connection()
+#con.config(filename='database3b.ini', section='postgresql')
+
+filename=''
+#section='postgresql'
+section=''
+
+db = con.readconfig()
+
+print (db['host'])
+
+print (db['password'])
+
+
+print (db['port'])
+print (db['user'])
+#con.writeconfig()

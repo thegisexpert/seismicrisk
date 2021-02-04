@@ -1,0 +1,9 @@
+drop table if exists hazardtemp;
+ùcreate table hazardtemp (gid int primary key, a real, b real, c real, d real);
+
+COPY hazardtemp(gid, a, b, c, d) FROM 'C:/Data/Python/hazard_parametros.csv' DELIMITER ';' CSV HEADER;
+
+update hazard set a=hazardtemp.a from hazardtemp where hazard.gid=hazardtemp.gid;
+update hazard set b=hazardtemp.b from  hazardtemp where hazard.gid=hazardtemp.gid;
+update hazard set c=hazardtemp.c from hazardtemp where hazard.gid=hazardtemp.gid;
+update hazard set d=hazardtemp.d from hazardtemp where hazard.gid=hazardtemp.gid;

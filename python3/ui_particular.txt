@@ -1,0 +1,4 @@
+
+file = os.path.join(
+os.path.dirname(__file__), 'dockmod_dockwidget_base.ui')
+        self.widget = uic.loadUi(file, self)

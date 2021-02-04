@@ -1,0 +1,5 @@
+http://pythonexample.com/code/normal%20lognormal%20data/
+
+#
+#
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.lognorm.html

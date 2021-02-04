@@ -1,0 +1,1 @@
+Copy (Select * From fragility_curve_structure order by type_structure, idfragility) To  'C:\Data\Python2\workspaceEnero\fragilities_assignation.xls' With CSV DELIMITER ',';

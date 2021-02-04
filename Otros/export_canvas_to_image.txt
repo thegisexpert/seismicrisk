@@ -1,0 +1,1 @@
+https://gis.stackexchange.com/questions/84723/rendering-and-labeling-shapefile-with-pyqgis

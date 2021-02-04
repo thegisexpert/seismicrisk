@@ -1,0 +1,3 @@
+vulindex
+vulfactor
+damage

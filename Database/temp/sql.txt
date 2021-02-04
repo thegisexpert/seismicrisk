@@ -1,0 +1,1 @@
+select gid, name, area,  unitcost, totalcost, damage from popoliloss order by gid;

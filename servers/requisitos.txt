@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/12728004/error-no-module-named-psycopg2-extensions
+
+insttal the command:
+
+pip install psycopg2-binary
+
+pip install numpy

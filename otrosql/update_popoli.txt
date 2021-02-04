@@ -1,0 +1,4 @@
+alter table popoliforpostgres add column name text;
+alter table popoliforpostgres add column type text;
+update popoliforpostgres set name='building' || to_char(gid, '999');
+update popoliforpostgres set type=round(get_random_number(0, 5));

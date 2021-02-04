@@ -1,0 +1,27 @@
+
+from PyQt4.QtCore import QSettings
+
+
+
+s = QSettings()
+#s.beginGroup("PostgreSQL/connections")
+s.beginGroup("PostgreSQL/connections")
+
+for data in s.allKeys():
+    if "database" in data:
+        print data
+
+
+#print s.allKeys()
+#print s.value("GEODEMO/username")
+
+s.endGroup()
+
+#execfile("D:/repositorydef/SeismicRisk/Otros/read_postgis_connections_in_qis.txt")
+
+#connect to a dabase un python....
+
+#https://github.com/anitagraser/pgRoutingLayer/blob/master/connectors/postgis.py
+
+
+

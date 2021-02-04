@@ -1,0 +1,102 @@
+drop table if exists distance_from_epicenter cascade;
+drop table if exists epicenter;
+
+create table epicenter(
+gid integer primary key,
+nsme text,
+geom geometry(Point)
+);
+
+
+
+
+drop table if exists hazard;
+drop sequence if exists hazard_id;
+
+--SELECT gid, name, ST_SetSRID(ST_Centroid(geom), 4326) as geom INTO hazard
+--FROM popoliforpostgres;
+
+create sequence hazard_id;
+
+/* ramdom in polygons
+SELECT nextval('hazard_id') as hazardid, gid, name, ST_SetSRID(RandomPointsInPolygon(geom, 3), 4326) as geom INTO hazard
+FROM popoliforpostgres;
+*/
+
+/*
+select  nextval('hazard_id') as hazardid, gid, name,
+ST_SetSRID(
+
+RandomPointsInPolygon(
+
+(SELECT ST_MakePolygon(ST_GeomFromText('LINESTRING(
+13.8299550809 42.1755520761 1,
+ 13.8354603714 42.1755822917 1,
+ 13.8353999401 42.172409649 1,
+ 13.8300336416 42.1723552608 1,
+
+ 13.8299550809 42.1755520761 1
+ )')))
+, 2)
+, 4326)
+
+
+ as geom INTO hazard
+FROM popoliforpostgres;
+*/
+
+
+
+
+select  nextval('hazard_id') as hazardid, gid, name, ST_SetSRID(ST_Centroid(geom), 4326) as geom INTO hazard
+FROM popoliforpostgres;
+
+drop table if exists hazardforbuilding;
+SELECT gid, name, ST_SetSRID(ST_Centroid(geom), 4326) as geom INTO hazardforbuilding
+FROM popoliforpostgres;
+
+alter table hazard add column momentum float;
+alter table hazard add column rdistance float;
+alter table hazard add column soilfactor float;
+alter table hazard add column hazard float;
+
+alter table hazard add column a float;
+
+alter table hazard add column b float;
+
+alter table hazard add column c float;
+
+alter table hazard add column d float;
+
+
+alter table hazard add column acel float;
+
+
+
+SELECT hazardid, gid INTO distance_from_epicenter FROM hazard;
+--- from hazard?
+alter table distance_from_epicenter add geom geometry(LineString);
+
+alter table distance_from_epicenter add distance float;
+
+
+
+update hazard set soilfactor = round(random());
+
+
+
+
+
+/*
+insert into epicenter values ('0', 'epicenter',  ST_MakePoint(13.8332505424, 42.1746958775));
+
+
+
+select ST_MPolyFromText('POINT((13.8332505424	42.1746958775))')
+
+
+select ST_MPolyFromText(ST_AsText(ST_MakePoint(13.8332505424, 42.1746958775)))
+
+'POINT((13.8332505424	42.1746958775))'
+*/
+

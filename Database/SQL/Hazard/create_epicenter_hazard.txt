@@ -1,0 +1,54 @@
+drop table if exists distance_from_epicenter cascade;
+drop table if exists epicenter;
+
+create table epicenter(
+gid integer primary key,
+nsme text,
+geom geometry(Point)
+);
+
+
+
+
+drop table if exists hazard;
+drop sequence if exists hazard_id;
+
+create sequence hazard_id;
+
+
+
+
+select  nextval('hazard_id') as hazardid, gid, name, ST_SetSRID(ST_Centroid(geom), 4326) as geom INTO hazard
+FROM popoliforpostgres;
+
+
+alter table hazard add column momentum float;
+alter table hazard add column rdistance float;
+alter table hazard add column soilfactor float;
+alter table hazard add column hazard float;
+
+alter table hazard add column a float;
+
+alter table hazard add column b float;
+
+alter table hazard add column c float;
+
+alter table hazard add column d float;
+
+
+alter table hazard add column acel float;
+
+
+
+SELECT hazardid, gid INTO distance_from_epicenter FROM hazard;
+--- from hazard?
+alter table distance_from_epicenter add geom geometry(LineString);
+
+alter table distance_from_epicenter add distance float;
+
+
+
+update hazard set soilfactor = round(random());
+
+
+

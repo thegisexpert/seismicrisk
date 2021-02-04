@@ -1,0 +1,2 @@
+drop table if exists verhazard;
+select rdistance, hazard, exp(hazard)  into verdatos from hazard order by rdistance;

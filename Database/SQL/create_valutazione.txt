@@ -1,0 +1,16 @@
+CREATE TABLE valutazione(
+   idstructure int,
+   idparam int,
+   x int,
+   z int,
+   f numeric,
+   w1 int,
+   w2 int,
+   n numeric,
+   vkimportance numeric,
+   vkprotection numeric,
+   paramvalue numeric,
+   PRIMARY KEY(idstructure, idparam),
+   FOREIGN KEY(idstructure) references popoliforpostgres(gid)
+
+);

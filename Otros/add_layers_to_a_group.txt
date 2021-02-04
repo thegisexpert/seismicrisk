@@ -1,0 +1,10 @@
+
+lyr =   QgsMapLayerRegistry.instance().mapLayersByName("hazard")[0]
+root = QgsProject.instance().layerTreeRoot()
+#myGroup1 = root.addGroup("My Group 1")
+#If you want to add it to a particular position in the ToC, use:
+
+myGroup1 = root.insertGroup(2, "My Group 1")
+treeLyr =myGroup1.insertLayer(0, lyr)
+
+"C:/Users/AG/.qgis2/python/plugins/SeismicRisk/Otros/add_layers_to_a_group.txt"

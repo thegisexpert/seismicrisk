@@ -1,0 +1,31 @@
+SELECT
+    a.id,
+    b.*
+FROM (
+    VALUES(
+        1,
+        ST_SetSRID(
+            ST_GeomFromText(
+                'POLYGON((0 0, -4 0, 4 -1, 0 -4, 0 0))'
+            ),
+        4326)
+    )
+    UNION ALL
+    VALUES(
+        2,
+        ST_SetSRID(
+            ST_GeomFromText(
+                'POLYGON((0 0, 4 0, 4 4, 0 4, 0 0))'
+            ),
+        4326)
+    )
+) a(id, geom)
+CROSS JOIN LATERAL (
+    SELECT ST_SetSRID(ST_MakePoint(tmp.x, tmp.y), 4326) geom
+    FROM (
+        SELECT
+            random() * (ST_XMax(a.geom) - ST_XMin(a.geom)) + ST_XMin(a.geom) x,
+            random() * (ST_YMax(a.geom) - ST_YMin(a.geom)) + ST_YMin(a.geom) y
+        FROM generate_series(0,50)
+    ) tmp
+) b;

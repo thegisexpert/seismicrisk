@@ -1,0 +1,1 @@
+Copy (Select * from fragility_curve_structure order by gid) To  'C:\Data\Python2\workspaceEnero\fragility_curve_structures.csv' With CSV DELIMITER ','  HEADER;

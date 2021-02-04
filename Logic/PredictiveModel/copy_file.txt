@@ -1,0 +1,3 @@
+Copy (Select * From valutazione) To  'D:\Data\Python\export\fragilities2.txt' With CSV DELIMITER ','  HEADER;
+
+Copy   valutazione from 'D:\Data\Python\export\fragilities2text.txt';

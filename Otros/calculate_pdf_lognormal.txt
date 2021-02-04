@@ -1,0 +1,13 @@
+#http://www.statisticshowto.com/lognormal-distribution/
+import math
+import numpy as np
+
+
+sigma = 0.5
+mu= 0.1
+x = 0.8
+
+y = - (math.log(x)-mu)*(math.log(x)-mu)/(2*sigma*sigma)
+N = 1/ sigma*math.sqrt(2*math.pi)*np.exp(y)
+
+print N

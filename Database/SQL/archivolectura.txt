@@ -1,0 +1,17 @@
+position, 2, 3
+storeys, 2, 3
+firstmodemec, 2, 3
+secondmodemec, 2, 3
+arches, 2, 3
+vaults, 2, 3
+slabs, 2, 3
+thrusting, 2, 3
+addstruc, 2, 3
+irregular, 2, 3
+nonstruct, 2, 3
+siteeffect, 2, 3
+nonseisexthaz, 2, 3
+vkprotect, 2, 3
+vkimportan, 2, 3
+vulnerab, 2, 3
+damage, 2, 3

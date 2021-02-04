@@ -1,0 +1,25 @@
+
+
+update popolispatial set vulnerab =
+(select  sum(vkimportance-vkprotection*paramvalue)*(1/6)*(1/(select sum(paramvalue) from valutazione where idstructure=3))+ 0.5 from valutazione
+where idstructure=3)
+where ogc_fid=3;
+
+
+update popolispatial set vulnerab =
+(select  sum(paramvalue*(vkimportance-vkprotection))*(1/6)*(1/(select sum(paramvalue) from valutazione where idstructure=4))+ 0.5 from valutazione
+where idstructure=4)
+where ogc_fid=4;
+
+
+select vkimportance, vkprotection, vkimportance-vkprotection, paramvalue  from valutazione where idstructure=4;
+
+---update del indice de danio  0.53  1.15  -4 4.21
+
+update popolispatial set damage = 0.53 + 1.15*vulnerab -4*vulnerab*vulnerab + 4.21*vulnerab*vulnerab*vulnerab
+
+
+;
+
+
+

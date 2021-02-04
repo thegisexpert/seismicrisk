@@ -1,0 +1,12 @@
+drop table if exists damage;
+
+
+SELECT gid, name, ST_SetSRID(ST_Centroid(geom), 3857) as geom INTO damage
+FROM popoliforpostgres;
+
+alter table damage add column damage real;
+
+
+/*update damage set damage=random();
+
+*/

@@ -1,0 +1,1 @@
+drop  table if exists fragility_curve_structure;  create table fragility_curve_structure as  select gid, idfragility from communitytostudy ; alter  table fragility_curve_structure add primary key (gid, idfragility); 

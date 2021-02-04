@@ -1,0 +1,9 @@
+set client_encoding to 'WIN1252'
+
+SELECT  ST_GeneratePoints(geom, 10) AS geom
+FROM popoliforpostgres
+WHERE gid =3
+
+
+SELECT gid, name, ST_SetSRID(ST_Centroid(geom), 4326) as geom INTO hazard
+FROM popoliforpostgres;

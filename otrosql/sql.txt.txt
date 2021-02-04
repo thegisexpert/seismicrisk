@@ -1,0 +1,36 @@
+create table puntospopoli as
+ SELECT gid, name, ST_Multi(ST_GeomFromText(st_asText(st_centroid(popoliforpostgres.geom)))) as geom 
+   FROM popoliforpostgres;
+
+alter table puntospopoli add column acceleration real;
+update puntospopoli set acceleration = random();
+
+
+
+create table bufferpopoli as
+ SELECT gid, name, ST_Buffer(ST_Multi(ST_GeomFromText(st_asText(st_centroid(popoliforpostgres.geom)))), 1) as geom 
+   FROM popoliforpostgres;
+
+alter table bufferpopoli add contra
+
+
+
+CREATE TABLE bufferpopoli
+(
+  gid integer NOT NULL,
+  name character varying(254),
+   geom geometry(MultiPolygon),
+ 
+ CONSTRAINT bufferpopoli_pkey PRIMARY KEY (gid)
+)
+
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE bufferpopoli
+  OWNER TO pgis;
+
+
+ALTER TABLE bufferpopoli
+  ALTER COLUMN  geom geometry(MultiPolygonZM)
+    USING ST_Force_3D(geom);

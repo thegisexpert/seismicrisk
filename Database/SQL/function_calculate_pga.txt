@@ -1,0 +1,20 @@
+CREATE OR REPLACE FUNCTION get_pga_value(float, float, float) RETURNS float AS $$
+DECLARE
+    pga ALIAS FOR $1;
+    mu ALIAS FOR $2;
+    sigma ALIAS FOR $3;
+    y real=0;
+BEGIN
+    y := (log(pga)-mu)*(log(pga)-mu)/2*sigma*sigma;
+    RETURN 1/sigma*sqrt(2*pi())+exp(y);
+END;
+$$ LANGUAGE 'plpgsql' STRICT;
+
+/*
+        sigma = float(sigma0)
+        mu = float(mu0)
+        x = float(pga)
+
+        y = - (math.log(x) - mu) * (math.log(x) - mu) / (2 * sigma * sigma)
+        N = 1 / sigma * math.sqrt(2 * math.pi) * np.exp(y)
+*/

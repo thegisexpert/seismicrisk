@@ -1,0 +1,250 @@
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+1539892.0363 5187139.79791 ,
+ 1539922.99081 5187122.40774 ,
+ 1539919.86058 5187114.06045 ,
+ 1539884.73243 5187121.71213 ,
+1539892.0363 5187139.79791 )'))));
+
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539834.11576 5187108.02956 1,
+ 1539852.0827 5187104.71527 1,
+ 1539857.8391 5187144.66119 1,
+ 1539843.53532 5187147.27773 1,
+ 1539834.11576 5187108.02956 1 )'))));
+
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539712.05727 5187158.28835 1,
+ 1539725.1887 5187160.01051 1,
+ 1539733.79948 5187116.95662 1,
+ 1539720.2375 5187114.37338 1,
+
+1539712.05727 5187158.28835 1)'))));
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+1539892.0363 5187139.79791 ,
+ 1539922.99081 5187122.40774 ,
+ 1539919.86058 5187114.06045 ,
+ 1539884.73243 5187121.71213 ,
+1539892.0363 5187139.79791 )'))));
+
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+1539892.0363 5187139.79791 ,
+ 1539922.99081 5187122.40774 ,
+ 1539919.86058 5187114.06045 ,
+ 1539884.73243 5187121.71213 ,
+1539892.0363 5187139.79791 )'))));
+
+--ALTER TABLE popolyforpostgres ALTER COLUMN geom type geometry(MultiPolygon, 102689) using ST_Multi(geom);
+
+/*
+
+problema con la Z dimension
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_Multi(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539712.05727 5187158.28835 1 1,
+ 1539725.1887 5187160.01051 1 1,
+ 1539733.79948 5187116.95662 1 1,
+ 1539720.2375 5187114.37338 1 1,
+
+1539712.05727 5187158.28835 1 1)'))));
+
+
+
+*/
+
+
+correcto no Z dimension
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539712.05727 5187158.28835 ,
+ 1539725.1887 5187160.01051 ,
+ 1539733.79948 5187116.95662 ,
+ 1539720.2375 5187114.37338 ,
+
+1539712.05727 5187158.28835 )')));
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539498.2947 5187152.47608 ,
+ 1539520.89799 5187172.28087 ,
+ 1539511.21087 5187182.82907 ,
+ 1539488.82285 5187162.80901 ,
+
+1539498.2947 5187152.47608 )')));
+
+ST_SetSRID
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539658.66233 5186991.0727 ,
+ 1539650.0479 5187030.97115 ,
+ 1539631.91224 5187026.89062 ,
+ 1539640.52668 5186986.99217 ,
+1539658.66233 5186991.0727  )')), 4326));
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+
+1539567.07726 5186938.02589 ,
+ 1539595.64092 5186944.82677 ,
+ 1539599.72144 5186929.41146 ,
+ 1539568.89082 5186923.51737 ,
+1539567.07726 5186938.02589 )')), 4326));
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+1539704.52283 5186884.46561 1,
+ 1539882.55067 5187158.07308 1,
+ 1539858.65576 5187166.46859 1,
+ 1539858.65576 5187181.10691 1,
+ 1539874.80097 5187183.25961 1,
+ 1539889.00875 5187169.9129 1')), 4326));
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT('LINESTRING(
+1539882.76594 5187156.78147 ,
+ 1539858.65576 5187166.03805 ,
+ 1539858.44049 5187181.96799 ,
+ 1539888.36295 5187169.69763 ,
+1539882.76594 5187156.78147) ')), 4326));
+
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539794.50547 5187088.75632,
+ 1539723.04392 5186939.38607,
+ 1539750.9275 5186942.10642,
+ 1539760.90211 5186912.40928,
+ 1539730.29819 5186905.8351,
+ 1539794.50547 5187088.75632)')), 4326));
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539889.68642 5187223.0092,
+ 1539906.87794 5187221.9777,
+ 1539905.84645 5187194.47127,
+ 1539888.65493 5187195.50276,
+
+1539889.68642 5187223.0092)')), 4326));
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539644.37227 5187134.0759,
+1539651.05654 5187131.72122,
+1539645.66355 5187118.42863,
+1539639.43502 5187120.93523,
+1539644.37227 5187134.0759)')), 4326));
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539679.99641 5187137.56995,
+ 1539695.7956 5187142.12741,
+ 1539698.98582 5187132.70866,
+ 1539683.18663 5187126.93588,
+1539679.99641 5187137.56995)')), 4326));
+
+
+
+---secondo
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539712.07443 5187156.66073,
+ 1539726.66152 5187159.86989,
+ 1539734.2468 5187115.23339,
+ 1539720.53494 5187114.35817,
+
+1539712.07443 5187156.66073)')), 4326));
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+13.8332878 42.1738527,
+
+13.8332865 42.1739089,
+
+13.8334246 42.1739034,
+
+13.8334226 42.1738503,
+
+13.8332878 42.1738527,
+13.8332878 42.1738527)')), 4326));
+
+
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+1539712.07443 5187156.66073,
+ 1539726.66152 5187159.86989,
+ 1539734.2468 5187115.23339,
+ 1539720.53494 5187114.35817,
+
+1539712.07443 5187156.66073)')), 4326));
+
+insert into popoliforpostgres (name, geom) values ('insert', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+13.8334246 42.1739034,
+
+13.8334461 42.1740113,
+
+13.8335346 42.1739993,
+
+13.8335191 42.173893,
+
+13.8334246 42.1739034)')), 4326));
+
+
+insert into popoliforpostgres (name, geom) values ('insert 2', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+13.8324865 42.1734095,
+
+13.8324282 42.1735039,
+
+13.8325415 42.1735426,
+
+13.8326025 42.1734467,
+
+13.8324865 42.1734095)')), 4326));
+
+
+insert into popoliforpostgres (name, geom) values ('insert 3', ST_SetSRID(ST_MakePolygon( ST_GeomFromEWKT(
+'LINESTRING(
+
+1539961.119 5187194.44732,
+ 1539977.25496 5187195.04495,
+ 1539978.05179 5187179.70583,
+ 1539960.52137 5187179.10821,
+
+1539961.119 5187194.44732)')), 4326));
+
+
+
+'''
+
+select UpdateGeometrySRID('public', 'popoliforpostgres', 'geom', 4326) ;
+'''

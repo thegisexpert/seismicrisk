@@ -1,0 +1,2 @@
+update hazard set a=0.098, b=0.11, c=0.98, d=0.67;
+update hazard set hazard=a+ b*momentum + c*rdistance + d*soilfactor;

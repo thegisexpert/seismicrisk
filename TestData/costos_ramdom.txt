@@ -1,0 +1,7 @@
+'''
+ SELECT random()*(1050-650)+650;
+ '''
+
+for i in range(0,166):
+ sql = "update popoliloss set unitcost= (SELECT random()*(1050-650)+650) where gid= " + str(i) + ";";
+ print sql;

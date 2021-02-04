@@ -1,0 +1,51 @@
+DROP SEQUENCE if exists fragility_curve_seq CASCADE;
+
+CREATE SEQUENCE fragility_curve_seq;
+
+DROP TABLE  if exists fragility_curve CASCADE;
+
+DROP TABLE  if exists fragility_curve_structure CASCADE;
+
+DROP TABLE  if exists fragility_curve_level CASCADE;
+
+
+DROP TABLE  if exists fragility_values CASCADE;
+
+
+SELECT gid, name, geom  INTO fragility_values
+FROM popoliforpostgres;
+-- this table have the values of gragility.
+ALTER TABLE fragility_values ADD COLUMN idfunction int default 0;
+ALTER TABLE fragility_values ADD COLUMN value float;
+ALTER TABLE fragility_values ADD PRIMARY KEY(gid);
+
+ALTER TABLE fragility_values ADD FOREIGN KEY(gid) references popoliforpostgres(gid);
+
+
+
+CREATE TABLE fragility_curve (
+    idfragility int default nextval('fragility_curve_seq'),
+    name text,
+    function text,
+    CONSTRAINT fragility_curves_pkey PRIMARY KEY(idfragility)
+);
+
+CREATE TABLE fragility_curve_level (
+    idfragility int,
+    level int,
+    param1 float,
+    param2 float,
+    param3 float,
+    param4 float,
+    CONSTRAINT fragility_curve_level_pkey PRIMARY KEY(idfragility, level),
+    CONSTRAINT fragility_curve_level_fkey FOREIGN KEY(idfragility) references fragility_curve (idfragility)
+);
+
+
+CREATE TABLE fragility_curve_structure (
+    type_structure int,
+    idfragility int,
+    CONSTRAINT fragility_curve_structure_pkey PRIMARY KEY(type_structure, idfragility),
+    CONSTRAINT fragility_curve_level_fkey FOREIGN KEY(idfragility) references fragility_curve (idfragility)
+
+);

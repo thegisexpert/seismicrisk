@@ -1,0 +1,6 @@
+DROP TABLE view_fragility_curve_structure;
+
+create table view_fragility_curve_structure as
+select fragility_values.gid, fragility_values.name, fragility_values.geom, idfunction, fragility_curve_structure.idfragility, level, param1, param2, value, hazard
+from fragility_values, fragility_curve_structure, fragility_curve_level, hazard
+where  hazard.gid =fragility_values.gid and fragility_values.gid=fragility_curve_structure.idfragility and fragility_curve_level.level='PARAM_LEVEL' and  fragility_curve_structure.idfragility=fragility_curve_level.idfragility;

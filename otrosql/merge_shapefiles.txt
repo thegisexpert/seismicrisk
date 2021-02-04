@@ -1,0 +1,72 @@
+#https://gis.stackexchange.com/questions/89706/how-to-merge-shapefiles-with-attributes-from-a-python-script-in-qgis
+
+
+import processing
+processing.alglist("merge")
+
+
+display_name="prueba7popoliforpostgres"
+
+layerExiste = QgsMapLayerRegistry.instance().mapLayersByName(display_name)
+
+layer1 = layerExiste[0]
+
+display_name="popoli2"
+
+layerExiste = QgsMapLayerRegistry.instance().mapLayersByName(display_name)
+
+layer2 = layerExiste[0]
+
+
+#processing.runalg("qgis:mergevectorlayers", layer1, layer2,"C:/Data/Python/outputfilename.shp")
+
+output="C:/Data/Python/outputfilename.shp"
+
+layer_merge = QgsVectorLayer('LineString', 'line', "memory")
+#layer_merge.setCrs(crs_4326)
+pr_merge = layer_merge.dataProvider()
+
+processing.tools.general.runalg("qgis:mergevectorlayers", layer1 ,layer2, layer_merge)
+
+
+-- dopo
+
+import processing
+
+
+
+processing.runalg("qgis:mergevectorlayers",
+                  "D:\Data\Queries\pruebapopoli.shp;D:\Data\Queries\pruebapopoli2.shp",
+                  "D:\Data\Queries\pruebapopoli3.shp")
+
+processing.runalg("qgis:mergevectorlayers",
+                  "/docs/geodata/AMAZONAS.shp;/docs/geodata/PUTUMAYO.shp",
+                  "/docs/merged.shp")
+
+
+                  D:\Data\Queries\pruebapopoli.shp
+
+
+---- create sql as table, and after export.
+
+pgsql2shp -f "/path/to/jpnei" -h myserver -u apguser -P apgpassword mygisdb
+
+
+pgsql2shp -f "D:\Data\Queries\popoliqueries.shp" -h 127.1.1.0 -u pgis -P pgis prueba7 hazard
+
+
+D:\Data\Queries\popoliqueries.shp
+
+
+
+'''
+generar el query, crear la tabla
+exportar popoliforpostgres y la table a shapefile
+hacer el mergefiles,
+load the shapefile merge
+
+'''
+
+
+
+

@@ -1,0 +1,3 @@
+select ST_MakeLine((select geom from hazard where gid='1'), (select geom from epicenter where gid='0'))
+
+insert into distance_from_epicenter(gid, geom) values ('1', (select ST_MakeLine((select geom from hazard where gid='1'), (select geom from epicenter where gid='0'))))

@@ -1,0 +1,16 @@
+drop table if exists communitytostudy;
+create table communitytostudy as select * from popoliforpostgres;
+
+ALTER TABLE  communitytostudy  RENAME COLUMN fragility TO idfragility;
+
+/*
+alter table communitytostudy add column name text;
+alter table communitytostudy add column description text;
+alter table communitytostudy add column idfragility int;
+alter table communitytostudy add column unitcost real;
+alter table communitytostudy add column soil real;
+alter table communitytostudy add column fault real;
+*/
+ALTER TABLE communitytostudy ADD PRIMARY KEY (gid);
+
+

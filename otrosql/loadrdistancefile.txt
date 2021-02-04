@@ -1,0 +1,13 @@
+layer = iface.addVectorLayer("C:/Data/Popoli/Popolibeb2017Copia/rdistance.shp", "rdistance_hazard", "ogr")
+if not layer:
+  print "Layer failed to load!"
+
+
+
+
+layer = iface.activeLayer();
+
+
+layer.loadNamedStyle('C:/Data/Popoli/Popolibeb2017Copia/stylerdistante.qml');
+
+#execfile("C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\otrosql\loadrdistancefile.txt");

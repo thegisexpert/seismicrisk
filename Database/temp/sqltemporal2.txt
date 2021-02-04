@@ -1,0 +1,2 @@
+insert into epicenter values ('0', 'epicenter',  ST_SetSRID(ST_MakePoint(8.9,8.7), 4326));
+update hazard set momentum = 7;

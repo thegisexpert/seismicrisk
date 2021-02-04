@@ -1,0 +1,1 @@
+https://gis.stackexchange.com/questions/213062/categorizing-by-attribute-using-custom-qgis-plugin-via-python-programming

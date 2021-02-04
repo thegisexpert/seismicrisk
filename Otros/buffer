@@ -1,0 +1,20 @@
+layer = iface.activeLayer()
+
+feats = layer.getFeatures()
+
+uri = "Polygon?crs=epsg:&field=id:integer""&index=yes"
+
+mem_layer = QgsVectorLayer(uri,
+                           'square_buffer',
+                           'memory')
+
+prov = mem_layer.dataProvider()
+
+for i, feat in enumerate(feats):
+    new_feat = QgsFeature()
+    new_feat.setAttributes([i])
+    tmp_feat = feat.geometry().buffer(1000, -1).boundingBox().asWktPolygon()
+    new_feat.setGeometry(QgsGeometry.fromWkt(tmp_feat))
+    prov.addFeatures([new_feat])
+
+QgsMapLayerRegistry.instance().addMapLayer(mem_layer)

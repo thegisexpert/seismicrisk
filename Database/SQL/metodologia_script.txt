@@ -1,0 +1,7 @@
+alter table popoliforpostgres add column name text;
+alter table popoliforpostgres add column type text;
+alter table popoliforpostgres add column vulindex real;
+alter table popoliforpostgres add column vulfactor real;
+alter table popoliforpostgres add column damage real;
+
+

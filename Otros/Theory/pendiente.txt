@@ -1,0 +1,5 @@
+estructura de suelos fallas y costos.
+
+soil fault  material  unitary cost
+
+ material fragility

@@ -1,0 +1,117 @@
+SELECT idstructure, x, count (x)  FROM valutazione
+
+group by x, idstructure
+order by idstructure, x;
+
+
+SELECT  x, count (x)  FROM valutazione
+
+group by x
+order by  x;
+
+
+SELECT idstructure, x, count (x)  FROM valutazione
+
+group by x, idparam
+order by idparam, x;
+
+
+--- count por id param
+select * from valutazione where idparam=14
+group by vkimportance, idstructure, idparam
+order by vkimportance;
+
+select * from valutazione where idparam=14
+group by x
+
+
+
+SELECT
+  x,
+  COUNT(*) AS `num`
+FROM
+  valutazione
+GROUP BY
+  x
+
+----------------
+
+malo
+SELECT idparam, x, 'Param ' ||  CAST (idparam AS text)|| '' as valores,  count (x) as total
+FROM valutazione
+
+group by x, idparam
+order by idparam, x;
+
+
+--------------
+
+select idparam,
+  count(case when z = 0 then 1 end) cero,
+  count(case when z = 1 then 1 end) uno,
+  count(case when z = 2 then 1 end) dos
+from valutazione
+group by idparam
+order by idparam;
+
+
+
+
+select idparam,
+  count(case when n = 0 then 1 end) cero,
+  count(case when n = 1 then 1 end) uno,
+  count(case when n = 2 then 1 end) dos
+from valutazione
+group by idparam
+order by idparam;
+
+
+
+select idparam,
+  count(case when f = 0 then 1 end) cero,
+  count(case when f = 1.5 then 1 end) uno,
+  count(case when f = 2 then 1 end) dos
+from valutazione
+group by idparam
+order by idparam;
+
+
+select idparam,
+  count(case when w1 = 0 then 1 end) cero,
+  count(case when w1 = 1 then 1 end) uno,
+  count(case when w1 = 2 then 1 end) dos
+from valutazione
+group by idparam
+order by idparam;
+
+
+
+select idparam,
+  count(case when vkprotection = 0 then 1 end) cero,
+  count(case when vkprotection  = 1 then 1 end) uno,
+  count(case when vkprotection  = 2 then 1 end) dos,
+    count(case when vkprotection  = 2 then 1 end) tres
+from valutazione
+group by idparam
+order by idparam;
+
+
+select idparam,
+  count(case when vkimportance = 0 then 1 end) cero,
+  count(case when vkimportance  = 1 then 1 end) uno,
+  count(case when vkimportance  = 2 then 1 end) dos,
+   count(case when vkimportance  = 3 then 1 end) tres
+from valutazione
+group by idparam
+order by idparam;
+
+
+
+select f, n
+from valutazione;
+
+-- export iv and vfactor factor
+
+select gid, name, vulindex, vulfactor
+from  popoliforpostgres;
+

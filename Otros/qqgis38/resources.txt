@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/55352219/how-to-compile-the-resources-qrc-file-with-pyrcc5

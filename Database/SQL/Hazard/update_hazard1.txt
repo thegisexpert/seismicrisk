@@ -1,0 +1,1 @@
+update hazard set hazard=1.2474 + 0.3735*momentum - 0.4383*log(rdistance/1000)+10;

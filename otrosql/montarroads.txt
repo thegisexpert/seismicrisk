@@ -1,0 +1,11 @@
+shp2pgsql -s SRID=3857 -t 2D D:\Data\Popoli\Queries\roads.shp popoliforpostgres   -U postgres > "C:/Data/Python/insert.txt"
+
+
+dropdb  -U pgis -h 127.0.0.1 -p 5434 roads
+createdb   -U pgis -h 127.0.0.1 -p 5434 roads
+psql -d roads -U pgis -h 127.0.0.1 -p 5434 < C:/Data/Python/extension_postgis.txt
+psql -d roads -U pgis -h 127.0.0.1 -p 5434 < C:/Data/Python/function_get_random_number.txt
+psql -U pgis -h 127.0.0.1 -p 5434 roads < C:/Data/Python/insert.txt
++
+
+D:\Data\Popoli\Queries

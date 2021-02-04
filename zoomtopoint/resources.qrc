@@ -1,0 +1,6 @@
+<RCC> 
+  <qresource prefix="/plugins/zoom_to_point" > 
+    <file>icon.png</file> 
+  </qresource> 
+</RCC> 
+

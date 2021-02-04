@@ -1,0 +1,18 @@
+[general]
+name=SeismicRisk
+description=Calculation of seismic risk of the built environment
+version=0.1.0
+qgisMinimumVersion=2.12
+category=Vector
+author=Dipartimento di Ingenieria e Geologia
+email=gonzalez.aleksander@unich.it
+changelog=
+
+tags=seismic risk, vulnerability model, losses model, hazard model
+about=Calculation of seismic risk of the built environment
+homepage=http://github.com/
+tracker=https://github.com/
+repository=https://github.com/
+icon=earthquake.png
+experimental=True
+deprecated=False

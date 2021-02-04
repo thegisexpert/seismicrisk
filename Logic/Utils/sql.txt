@@ -1,0 +1,1 @@
+update view_fragility_curve_structure set value=get_pga_value(hazard, param1, param2)

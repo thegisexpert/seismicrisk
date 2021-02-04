@@ -1,0 +1,19 @@
+-- Function: get_random_number(integer, integer)
+
+-- DROP FUNCTION get_random_number(integer, integer);
+
+CREATE OR REPLACE FUNCTION get_random_number(integer, integer)
+  RETURNS real AS
+$BODY$
+DECLARE
+    start_int ALIAS FOR $1;
+    end_int ALIAS FOR $2;
+BEGIN
+    RETURN random() * (end_int-start_int) + start_int;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE STRICT
+  COST 100;
+ALTER FUNCTION get_random_number(integer, integer)
+  OWNER TO pgis;
+

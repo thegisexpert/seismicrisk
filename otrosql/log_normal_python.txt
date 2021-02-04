@@ -1,0 +1,11 @@
+from scipy.stats import lognorm
+stddev = 0.859455801705594
+mean = 0.418749176686875
+dist=lognorm([stddev],loc=mean)
+#which will give you a lognorm distribution object with the mean and standard deviation you specify. You can then get the pdf or cdf like this:
+
+import numpy as np
+import pylab as pl
+x=np.linspace(0,6,200)
+pl.plot(x,dist.pdf(x))
+pl.plot(x,dist.cdf(x))

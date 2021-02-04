@@ -1,0 +1,1 @@
+update popoliloss set totalcost= unitcost*area*damage

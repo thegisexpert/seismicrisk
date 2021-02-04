@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QuickWKT</class>
+ <widget class="QDialog" name="QuickWKT">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>916</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QuickWKT</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="title">
+       <string>Information</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Vulnerability parameters</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QTableWidget" name="tableWidget">
+           <row>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>9</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>12</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>13</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>14</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>Vulnerability parameters</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Vulnerability types</string>
+            </property>
+            <property name="font">
+             <font>
+              <stylestrategy>NoAntialias</stylestrategy>
+             </font>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>pk</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QDialogButtonBox" name="buttonBox_2">
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Fragility indicators</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QTableWidget" name="tableWidget_2">
+           <row>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>12</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>14</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>13</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>Parameter</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>z</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>w</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>f</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QDialogButtonBox" name="buttonBox">
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Protection indicators</string>
+      </attribute>
+      <widget class="QWidget" name="horizontalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>881</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_3">
+          <row>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Parameter</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>w</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>n</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QDialogButtonBox" name="buttonBox_3">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>490</y>
+         <width>436</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

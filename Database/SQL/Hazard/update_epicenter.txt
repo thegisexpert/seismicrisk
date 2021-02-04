@@ -1,0 +1,74 @@
+SELECT UpdateGeometrySRID('epicenter','geom',4326);
+SELECT UpdateGeometrySRID('distance_from_epicenter','geom',4326);
+
+SELECT UpdateGeometrySRID('hazard','geom',4326);
+/* etos dos querys no deberian estar comentados pero hay un error
+update distance_from_epicenter set geom = ST_SetSRID((select ST_MakeLine((select geom from hazard where hazard.gid=distance_from_epicenter.gid),
+(select geom from epicenter where gid='0'))), 4326);
+
+update distance_from_epicenter set distance=ST_Length(geom);
+*/
+
+
+update distance_from_epicenter set geom = ST_SetSRID((select ST_MakeLine((select geom from hazard where hazard.hazardid=distance_from_epicenter.hazardid),
+(select geom from epicenter where gid='0'))), 4326);
+
+update distance_from_epicenter set distance=ST_Length(geom);
+/*
+update hazard set rdistance=ST_Length((select geom from distance_from_epicenter where distance_from_epicenter.gid=hazard.gid));
+
+a + b*M + c*R + d*S
+
+update hazard set rdistance=ST_Length((select ST_transform(geom, 3857) from distance_from_epicenter where distance_from_epicenter.hazardid=hazard.hazardid))/1000;
+
+update hazard set rdistance=ST_Length((select geom::geography from distance_from_epicenter where distance_from_epicenter.hazardid=hazard.hazardid))/1000;
+
+
+
+
+update hazard set rdistance=ST_Distance((select geom::geography from hazard),(select geom from epicenter where gid='0'));
+
+---ATTENZIONE
+--Questo select calculate la distanza
+select gid, rdistance, ST_Distance((select geom from hazard where gid=hazard2.gid),(select geom from epicenter where gid='0'))
+from hazard as hazard2 order by gid;
+*/
+
+
+/* I dont understand*/
+update hazard set rdistance= ST_Distance((select geom from hazard where gid=hazard2.gid),(select geom from epicenter where gid='0'))
+from hazard as hazard2 where hazard.gid=hazard2.gid;
+
+
+
+
+
+
+
+
+/*
+la formula correcta es:
+
+update hazard set hazard=1.2474 + 0.3735*momentum - 0.4383*log(rdistance/1000+10);
+*/
+
+/* formulas
+
+
+update hazard set hazard=a+ b*momentum + c*rdistance + d*soilfactor;
+
+update hazard set hazard=1.2474 + 0.3735*momentum - 0.00929*log(rdistance/1000) + 0*1;
+
+#update hazard set hazard=-3.8017 + 0.5568*momentum - *log(rdistance/1000)+10;
+
+
+
+
+
+https://www.researchgate.net/publication/266877479_LEYES_DE_ATENUACION_PARA_SISMOS_CORTICALES_Y_DE_SUBDUCCION_PARA_EL_ECUADOR
+
+log(A)=1.2474 + 0.3735*M - 0.4383*ln(D+10)
+
+log(A)=0.0134 + 0.3302*M - 0.1284*ln(D+10)*/
+
+/*update hazard set acel=log(hazard);*/

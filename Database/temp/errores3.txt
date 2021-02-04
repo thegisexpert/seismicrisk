@@ -1,0 +1,17 @@
+             updategeometrysrid             
+--------------------------------------------
+ public.epicenter.geom SRID changed to 4326
+(1 riga)
+
+                    updategeometrysrid                    
+----------------------------------------------------------
+ public.distance_from_epicenter.geom SRID changed to 4326
+(1 riga)
+
+           updategeometrysrid            
+-----------------------------------------
+ public.hazard.geom SRID changed to 4326
+(1 riga)
+
+UPDATE 332
+UPDATE 332

@@ -1,0 +1,46 @@
+import os, subprocess
+
+# Choose your PostgreSQL version here
+os.environ['PATH'] += r';C:\Program Files\PostgreSQL\9.5\bin'
+# http://www.postgresql.org/docs/current/static/libpq-envars.html
+os.environ['PGHOST'] = 'localhost'
+os.environ['PGPORT'] = '5432'
+os.environ['PGUSER'] = 'potgres'
+os.environ['PGPASSWORD'] = 'postgres'
+os.environ['PGDATABASE'] = 'prueba4'
+
+base_dir = r"c:\Data\Popoli\Popoli"
+full_dir = os.walk(base_dir)
+shapefile_list = []
+for source, dirs, files in full_dir:
+    for file_ in files:
+        if file_[-3:] == 'shp':
+            shapefile_path = os.path.join(base_dir, file_)
+            shapefile_list.append(shapefile_path)
+for shape_path in shapefile_list:
+    cmds = 'shp2pgsql "' + shape_path + '" popoliforpostgres -U postgres '
+    cmds = cmds + '> "C:/Data/Python/insert.txt"'
+    print cmds
+    subprocess.call(cmds, shell=True)
+
+cmd = "dropdb  -U postgres prueba6"
+subprocess.call(cmd, shell=True)
+
+cmd = "createdb  -U postgres prueba6"
+subprocess.call(cmd, shell=True)
+
+
+cmd = 'psql -d prueba6 -U postgres -c "CREATE EXTENSION postgis"'
+subprocess.call(cmd, shell=True)
+
+
+cmd = 'psql -U postgres prueba6 < "C:/Data/Python/insert.txt"'
+print cmd
+subprocess.call(cmd, shell=True)
+
+cmd = 'psql -U postgres prueba6 < "C:/Data/Python/create_valutazione.txt"'
+print cmd
+subprocess.call(cmd, shell=True)
+
+print "the dababase has been created"
+

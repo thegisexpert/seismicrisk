@@ -1,0 +1,99 @@
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\PruebaAutoFields\Ui_AutoFields_dock.ui" -o  "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\PruebaAutoFields\Ui_AutoFields_dock.py"
+
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\Resilience\resources.qrc" -o  D:\usbgis\apps\qgis2\qgisconfig\python\plugins\Resilience\Resources_py.py"
+
+---- si estoy en C: ---
+
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\Ui_AutoFields_dock.ui" -o  "C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\Ui_AutoFields_dock.py"
+
+"C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "C:\usbgis\apps\qgis2\qgisconfig\python\plugins\Resilience\resources.qrc" -o  C:\usbgis\apps\qgis2\qgisconfig\python\plugins\Resilience\Resources_py.py"
+
+
+--- new form---
+
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "C:\Users\AG\.qgis2\python\plugins\SeismicRisk\UI\building.ui" -o  "C:\Users\AG\.qgis2\python\plugins\SeismicRisk\UI\building.py"
+
+-- new --
+C:\Program Files (x86)\QGIS 2.18\apps\python27
+
+
+python "C:\Program Files (x86)\QGIS 2.18\apps\python27\lib\site-packages\PyQt4\uic\pyuic.py" "C:\Users\AG\.qgis2\python\plugins\SeismicRisk\Ui_SeismicRisk_dock.ui" -o  "C:\Users\AG\.qgis2\python\plugins\SeismicRisk\Ui_SeismicRisk_dock.py"
+
+
+"C:\Python27\ArcGIS10.5\Lib\site-packages\PyQt4\pyuic"
+"C:\Users\AG\.qgis2\python\plugins\SeismicRisk\Ui_SeismicRisk_dock.ui" -o  "C:\Users\AG\.qgis2\python\plugins\SeismicRisk\Ui_SeismicRisk_dock.py"
+
+
+C:/Users/AG/.qgis2/python/plugins\\SeismicRisk\\Ui_SeismicRisk_dock.ui
+
+---- nuevo plugin Built enviroment -----
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentProperties\BuilltEnvironmentProperties_dockwidget_base.ui" -o  "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentProperties\BuilltEnvironmentProperties_dockwidget_base.py"
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentProperties\resources.qrc" -o  "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentProperties\Resources_py.py"
+
+---- nuevo plugin Built dialof -----
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentDialog\BuiltEnvironmentDialog_dialog_base.ui" -o  "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentDialog\BuiltEnvironmentDialog_dialog.py"
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentDialog\resources.qrc" -o  "C:\Users\AG\.qgis2\python\plugins\BuilltEnvironmentProperties\resources.py"
+
+--subplugin QuicktWKT ----
+
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\QuickWKT\Ui_QuickWKT.ui" -o  "C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\QuickWKT\QuickWKTDialog.py"
+
+
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "C:\Users\AG\.qgis2\python\plugins\plugins\PruebaAutoFields\QuickWKT\resources.qrc" -o  C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\QuickWKT\Resources_py.py"
+
+
+
+-- segundo plugin ----
+
+
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "\BuiltEnvironmentRecorderModule_dialog_base.ui" -o  "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\BuiltEnvironmentRecorder\BuiltEnronmentRecorderModule_dialog_base.py"
+
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\BuiltEnvironmentRecorder\resources.qrc" -o  D:\usbgis\apps\qgis2\qgisconfig\python\plugins\BuiltEnvironmentRecorder\Resources_py.py"
+
+--- fin segundo plugin ----
+
+ "C:\Python27\Lib\site-packages\PyQt4\pyrcc4.exe" "D:\Program Files\QGIS 2.18\apps\qgis\python\plugins\Resilience\resources.qrc" -o  "D:\Program Files\QGIS 2.18\apps\qgis\python\plugins\Resilience\Resources.py"
+ corren dentro  de C:/Python
+
+
+
+ shp2pgsql D:/Data/Algoritmos/polygonscerrado.shp popoliforpostgres -t popoliforpostgres -U postgres > C:/Data/Python/insert2.txt
+
+
+
+  pgsql2shp [OPTIONS] database [schema.]table pgsql2shp [OPTIONS] database query
+
+
+C:\Users\AG\.qgis2\python\plugins\PruebaAutoFields\Otros\query_geometria_simple.sql
+
+
+-- la tabla datos debe se creada por la consulta
+
+
+pgsql2shp -h 127.0.0.1 -p 5434 -u pgis -f "C:/Data/Python/generato/generato.shp" prueba7  datos
+
+pgsql2shp -f <path to output shapefile> -h <hostname> -u <username> -P <password> databasename "<query>"
+
+psql -U pgis  -h 127.0.0.1 -p 5434 prueba7 < C:/Data/Python/create_fragility.txt
+
+-- qgis2to3
+
+
+D:\Program Files (x86)\Anaconda3>python "Scripts/qgis2to3" "C:\Users\AG\.qgis2\python\plugins\SeismicRisk"
+
+--- qgis 3.8
+
+
+"C:\Python27\Lib\site-packages\PyQt4\pyuic4" "\BuiltEnvironmentRecorderModule_dialog_base.ui" -o  "D:\usbgis\apps\qgis2\qgisconfig\python\plugins\BuiltEnvironmentRecorder\BuiltEnronmentRecorderModule_dialog_base.py"
+
+D:\Program Files\QGIS 3.8\bin
+
+
+"C:\Users\AG\AppData\Roaming\QGIS\QGIS3\profiles\default\widget3\resources.qrc"
+
+pyrcc5 -o resources.py resources.qrc
+
+
+
+python "D:/Bitnami/djangostack-2.2.5-0/python/Scripts/qgis2apifinder" "D:/repositorydef/SeismicRisk/"
+python "D:/Bitnami/djangostack-2.2.5-0/python/Scripts/qgis2apifinder" "D:/repositorydef/SeismicRisk/SeismicRiskDockWidget.py"

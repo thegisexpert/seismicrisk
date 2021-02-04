@@ -1,0 +1,17 @@
+
+#merge shapefile
+
+#https://gis.stackexchange.com/questions/89706/how-to-merge-shapefiles-with-attributes-from-a-python-script-in-qgis
+
+
+import processing
+processing.alglist("merge")
+#Then you could find out how to use the most appropriate function with:
+
+vlayer =  QgsMapLayerRegistry.instance().mapLayersByName("salvatodeqgis")[0]
+vlayer2 =  QgsMapLayerRegistry.instance().mapLayersByName("savedfromqgis")[0]
+
+processing.alghelp("qgis:mergevectorlayers")
+#Then simply use the algorithm in your script as follows:
+
+processing.runalg("qgis:mergevectorlayers", [vlayer] + [vlayer2],"C:\Data\Python\generato\mergedfromqgis.shp")

@@ -1,0 +1,19 @@
+# This file contains metadata for your plugin. Beginning
+# with version 1.8 this is the preferred way to supply information about a
+# plugin. The current method of embedding metadata in __init__.py will
+# be supported until version 2.0
+
+# This file should be included when you package your plugin.
+
+[general]
+name=Zoom to Point
+description=Zoom to a specified point on the map
+version=2.0.2
+qgisMinimumVersion=2.0
+
+icon=icon.png
+
+changelog=Remove message bar and logging
+
+author=GeoApt LLC
+email=gsherman@geoapt.com
